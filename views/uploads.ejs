@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Uploads</title>
+  </head>
+  <body>
+    <h1>Your Uploaded Images</h1>
+    <div class="image-gallery">
+      <% if (images.length > 0) { %> <% images.forEach(function(image) { %>
+      <div>
+        <img src="<%= image.image %>" style="max-width: 100%; height: auto" />
+      </div>
+      <% }); %> <% } else { %>
+      <p>No images uploaded yet.</p>
+      <% } %>
+    </div>
+    <a href="/images/upload">Upload More Images</a>
+    <form action="/users/logout" method="get"><button>Logout</button></form>
+  </body>
+</html>
